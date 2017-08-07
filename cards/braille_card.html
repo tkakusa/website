@@ -1,0 +1,81 @@
+<div ng-init="flipped[1]=false" ng-class="{true:'card card_flipped', false:'card'}[flipped[1]]" ng-click="flipCard(1)" style="width: 90%;margin: 5%;margin-top: 14%;">
+  <div ng-show="!flipped[1]">
+    <div class="card_img">
+      <img class="card_img" src="/photos/3d_printing.png" alt="Card image cap">
+    </div>
+    <h4 class="card-header tk_card_header">Pic To Braille</h4>
+    <div class="card-block">
+
+      <p class="card-text">
+        The goal of this application was to develop a simple mechanism in which people who had some sort of vision
+        impedement a way of getting documents for them printed in braille for them to more easily read them. Through
+        this system, a picture of the document that needs to be converted would be taken using the android app developed,
+        this would then send data to the internal servers where they would convert and 3D print the document to be read.
+        Through this system the sharing of information could be not me limited by the ability to see it through your eyes.
+      </p>
+    </div>
+    <div class="card-footer text-muted"> Click for more details! </div>
+  </div>
+
+  <div ng-show="flipped[1]" class="card_flipped_content">
+    <h4 class="card-header tk_card_header">Pic To Braille</h4>
+    <div class="card-block">
+      <p class="card-text">
+        &emsp;  The goal of this application was to develop a simple mechanism in which people who had some sort of vision
+        impedement a way of getting documents for them printed in braille for them to more easily read them. Through
+        this system, a picture of the document that needs to be converted would be taken using the android app developed,
+        this would then send data to the internal servers where they would convert and 3D print the document to be read.
+        Through this system the sharing of information could be not me limited by the ability to see it through your eyes.
+      </p>
+
+      <img class="card_content_img" src="/photos/3d_workflow.png" alt="Card image cap">
+
+      <h1 class="card_content_title">Design</h1>
+
+      <p class="card-text">
+        &emsp;  At the beginning of the design is the android application that would be used in order to take the picture
+        of the document. There are two different input methods that could be used in order to get the text that is on the
+        document. In the first method the user can take a picture of the document and send this to the internal server.
+        Once received the picture would then be converted to text using the pytesseract api designed by Google. Thos would
+        then be sent back to the phone and displayed on a separate screen where the user can change or edit the information
+        until it suits the form that they wanted. The second method is for the user to manually type in the information on
+        the document and thensend that immediately to the server. <br><br>
+
+        &emsp;  Once the information has been sent to the server, the text is then converted, using a script developed by
+        my team that will outout it as braille. This text would then be inputted to another script we developed in order to
+        convert it into STL (3D printing language that can read in by the 3D printer). The final output is then sent to the
+        3D printer where it where it would be printed.
+      </p>
+
+      <h1 class="card_content_title">Components</h1>
+
+      <p class="card-text">
+        &emsp;  On the hardware end, the were only 4 pieces of hardware that were necessary in order to make the system work.
+        The first component was the android device used for taking the pictures and evaluating the results given by the server
+        once the image has been converted. The next piece was the server raspberry pi that was used for all the intercommunication
+        between the other hardware components. The server pi was also where the pytesseract scripts where stored. Through the
+        server pi, the phone was able get the picture to text information, the phone could then also send the revied info to the
+        3D printer, and the 3D printer could send status information to the phone to update it on the current jobs that are running.
+        The third part was the raspberry pi that was used that contained the Octoprint software that allowed access to the 3D
+        printer through api calls rather than having to plug the printer straight into the server. The final component was then
+        the 3D printer that was used to print the STL data that it received. <br><br>
+
+        &emsp;  On the software end, all the code on the server pi was written in python and the entire interface followed a
+        restful scheme. Rest commands were used in order to send data to and from the server and the phone, as well as between
+        the server and the Octoprint raspberry pi. RabbitMQ was then used in order to send messages, such as status information
+        of the job from the server to the phone. <br><br>
+
+        Through this system vision could no longer be the limit that denies people access to the information they need.
+
+
+
+      </p>
+    </div>
+    <div class="card-footer text-muted">
+      <div class="card_links">
+        <a href="https://github.com/nmiller127/NetApps-Final-Project" target="_blank" style="margin-right: 20%;"><i class="fa fa-github" aria-hidden="true"></i></a>
+        <a href="docs/3d_printing.pdf" target="_blank"><i class="fa fa-file-text-o" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </div>
+</div>

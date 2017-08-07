@@ -1,0 +1,74 @@
+<div ng-init="flipped[0]=false" ng-class="{true:'card card_flipped', false:'card'}[flipped[0]]" ng-click="flipCard(0)" style="width: 90%;margin: 5%;margin-top: 14%;">
+  <div ng-show="!flipped[0]">
+    <div class="card_img">
+      <img class="card_img" src="/photos/homeless.jpg" alt="Card image cap">
+    </div>
+    <h4 class="card-header tk_card_header">Qiosk Application</h4>
+    <div class="card-block">
+
+      <p class="card-text">
+      The main purpose of this application was to design a method in which homeless people
+      would be able to apply for jobs. Through this system a prospective employee would come up to the kiosk system
+      where they could create an account and apply for a job. Employers can then also log in either through the phone
+      or the android application. Through this slowly homeless people could get the work and experience they need
+      in order to better advance themselves</p>
+    </div>
+    <div class="card-footer text-muted"> Click for more details! </div>
+  </div>
+
+  <div ng-show="flipped[0]" class="card_flipped_content">
+    <h4 class="card-header tk_card_header">Qiosk Application</h4>
+    <div class="card-block">
+      <p class="card-text">
+      The main purpose of this application was to design a method in which homeless people
+      would be able to apply for jobs. Through this system a prospective employee would come up to the kiosk system
+      where they could create an account and apply for a job. Employers can then also log in either through the phone
+      or the android application. Through this slowly homeless people could get the work and experience they need
+      in order to better advance themselves.</p>
+
+      <img class="card_content_img" src="/photos/django_rest.png" alt="Card image cap">
+
+      <h1 class="card_content_title">Backend</h1>
+
+      <p class="card-text">
+          On the backend the project uses the Django Rest Framework in order to do the simple api calls.
+          A restful interface was chosen in order to accomodate the use of both the app and the webpage without
+          having to configure the data on the backend side to the specific device. In the backend I setup a simple
+          token based authentication scheme that would be used to authorize the different users. The authentication
+          allowed users to then access the rest of the api calls.
+      </p>
+
+      <h1 class="card_content_title"><strong>frontend</strong></h1>
+      <img class="card_content_img" src="/photos/qioskapp.png" alt="Card image cap" style="width: 40%;margin: 0%;float: left;margin-right: 1%">
+      <p class="card-text">
+        On the frontend, there was an android application was designed using android studio and the web interface was
+        designed using the foundations framework, jquery, and SASS. When designing this system, my team and I chose to
+        use the website for the homeless people to use in order to access the jobs available and get local information
+        about deals and shelters that are near them. The android application would then be used by the employers in order
+        to create new jobs and check the progress of jobs. <br> <br>
+
+        There was then a rating system put in place in order to allow employess to rate employers and employers to rate
+        employees. By doing this the system could then allow for employees to rank up and gain more reputation and respect
+        for the work that they are doing. Through this they could then build there resume in order to apply for better
+        positions. <br><br>
+
+
+        Finally there would be a financial system set up that would allow for the payments between the employers and
+        employees to all be handles in house. This would then allow the program to issue out a debit card that could be
+        used by the employer to make all the purchases that they would need. The hope is, with the inclusion of the debit
+        card, instead of direct cash, the emplyee is less likely to use the funds for elicit activities. <br><br>
+
+        In the end the goal was to set up a system in which homeless people could build up there reputation and get to
+        a better point in their life.
+      </p>
+
+    </div>
+
+    <div class="card-footer text-muted">
+      <div class="card_links">
+        <a href="https://github.com/tkakusa/Qiosk" target="_blank" style="margin-right: 20%;"><i class="fa fa-github" aria-hidden="true"></i></a>
+        <a href="docs/Qiosk.pdf" target="_blank"><i class="fa fa-file-text-o" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
